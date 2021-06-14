@@ -10,7 +10,7 @@ __version__ = '1.0'
 r'''
 This script estimates the kinetic parameters of glucose facilitator protein (glf) which transports both glucose and xylose with  competitive inhibition of each other
 
-Example:
+Usage:
 python path\to\substrate_uptake_kinetics.py
 '''
 
