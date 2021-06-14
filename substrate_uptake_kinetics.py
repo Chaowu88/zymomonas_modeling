@@ -39,13 +39,12 @@ class ParamsFitting:
 		self.data = pd.read_excel(data_file, index_col = 0, usecols = [0, 1, 2, 3], names = ['time', 'OD', 'glucose', 'xylose'])
 		
 		self.timepoints = self.data.index.values
-		self.exp_biom = (self.data['OD'] * OD2BIOMASS).values			# g/L
+		self.exp_biom = (self.data['OD'] * OD2BIOMASS).values		# g/L
 		self.exp_glc = (self.data['glucose'] / GLC_MW * 1000).values	# mmol/L
-		self.exp_xyl = (self.data['xylose'] / XYL_MW * 1000).values		# mmol/L
+		self.exp_xyl = (self.data['xylose'] / XYL_MW * 1000).values	# mmol/L
 		self.ini_concs = [self.exp_glc[0], self.exp_xyl[0]]
 		
-		self.interp_biomass = interp1d(self.timepoints, self.exp_biom, kind = 'linear', 
-									   fill_value = 'extrapolate')   # don't use cubic, or biomass will be negative
+		self.interp_biomass = interp1d(self.timepoints, self.exp_biom, kind = 'linear', fill_value = 'extrapolate')   # don't use cubic, or biomass will be negative
 									   
 		
 	@staticmethod
@@ -93,8 +92,8 @@ class ParamsFitting:
 		res = NLP(f, x0 = x0, lb = [0]*len(x0), ub = [np.inf]*len(x0)).solve('ralg')
 			
 		self.fitted_params = pd.Series(res.xf, index = ['Vmax_glc(mmol/gDCW/L)', 'Vmax_xyl(mmol/gDCW/L)', 
-														'Km_glc(mmol/L)', 'Km_xyl(mmol/L)', 'Ki_glc(mmol/L)', 
-														'Ki_xyl(mmol/L)'])
+								'Km_glc(mmol/L)', 'Km_xyl(mmol/L)', 'Ki_glc(mmol/L)', 
+								'Ki_xyl(mmol/L)'])
 		
 		sim_glc, sim_xyl = self._concs(self.fitted_params.values, self.timepoints)
 		R2 = 1 - (np.sum((self.exp_glc - sim_glc)**2) + np.sum((self.exp_xyl - sim_xyl)**2)) / \
@@ -129,17 +128,17 @@ class ParamsFitting:
 			plt.legend(loc = 'center', bbox_to_anchor = (0.75, 0.3), fontsize = 18)
 
 			names = ['$V_{max,glc}$', 
-					 '$V_{max,xyl}$', 
-					 '$K_{m,glc}$', 
-					 '$K_{m,xyl}$', 
-					 '$K_{i,glc}$', 
-					 '$K_{i,xyl}$']
+				 '$V_{max,xyl}$', 
+				 '$K_{m,glc}$', 
+				 '$K_{m,xyl}$', 
+				 '$K_{i,glc}$', 
+				 '$K_{i,xyl}$']
 			units = ['mmol gDCW$^{-1}$ h$^{-1}$', 
-					 'mmol gDCW$^{-1}$ h$^{-1}$', 
-					 'mmol L$^{-1}$', 
-					 'mmol L$^{-1}$', 
-					 'mmol L$^{-1}$', 
-					 'mmol L$^{-1}$']
+			         'mmol gDCW$^{-1}$ h$^{-1}$', 
+				 'mmol L$^{-1}$', 
+				 'mmol L$^{-1}$', 
+				 'mmol L$^{-1}$', 
+				 'mmol L$^{-1}$']
 			paramsStr = ['%s: %.2f %s' % (name, value, unit) for name, value, unit in zip(names, self.fitted_params.values, units)]
 			msg = 'Fitted parameters:\n' + '\n'.join(paramsStr)
 			plt.text(0.35, 0.5, msg, transform = plt.gca().transAxes, fontsize = 13.5)
@@ -165,10 +164,10 @@ class ParamsFitting:
 			v_xyl = self.v_xylose(c_xyl, c_glc, vmax_xyl, km_xyl, ki_glc)
 			
 			kineticData = pd.DataFrame({'time': ts, 
-										'glc_c': c_glc,
-										'xyl_c': c_xyl, 
-										'glc_v': v_glc,
-										'xyl_v': v_xyl})
+						    'glc_c': c_glc,
+						    'xyl_c': c_xyl, 
+						    'glc_v': v_glc,
+						    'xyl_v': v_xyl})
 			kineticData.to_csv('%s/kinetic_data.tsv' % out_dir, sep = '\t', index = False)
 		
 		else:
