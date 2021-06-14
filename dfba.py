@@ -34,12 +34,12 @@ VMAX_ACTN = 10		# mmol/gDCW/h
 KM_GLC = 40.21		# mmol/L
 KM_XYL = 80.96		# mmol/L
 KM_O2 = 0.00124		# mmol/L 
-KM_BDO = 5			# mmol/L
-KM_ACTN = 5			# mmol/L
+KM_BDO = 5		# mmol/L
+KM_ACTN = 5		# mmol/L
 KI_GLC = 128.86		# mmol/L
 KI_XYL = 23.98		# mmol/L
 C_O2_GAS = 0.21		# mmol/L
-KLA = 30			# 1/h
+KLA = 30		# 1/h
 
 
 import numpy as np
@@ -60,16 +60,15 @@ class GrowSimulation:
 	
 	def read_experimental_data(self, data_file):
 		
-		self.data = pd.read_excel(data_file, index_col = 0, 
-								  names = ['time', 'OD', 'glucose', 'xylose', 'glycerol', 'acetoin', 'BDO'])
+		self.data = pd.read_excel(data_file, index_col = 0, names = ['time', 'OD', 'glucose', 'xylose', 'glycerol', 'acetoin', 'BDO'])
 
 		self.timepoints = self.data.index.values
-		self.exp_biom = (self.data['OD'] * OD2BIOMASS).values				# g/L
+		self.exp_biom = (self.data['OD'] * OD2BIOMASS).values			# g/L
 		self.exp_glu = (self.data['glucose'] / GLC_MW * 1000).values		# mmol/L
-		self.exp_xyl = (self.data['xylose'] / XYL_MW * 1000).values			# mmol/L
+		self.exp_xyl = (self.data['xylose'] / XYL_MW * 1000).values		# mmol/L
 		self.exp_glyc = (self.data['glycerol'] / GLYC_MW * 1000).values		# mmol/L
 		self.exp_actn = (self.data['acetoin'] / ACTN_MW * 1000).values		# mmol/L
-		self.exp_bdo = (self.data['BDO'] / BDO_MW * 1000).values			# mmol/L
+		self.exp_bdo = (self.data['BDO'] / BDO_MW * 1000).values		# mmol/L
 		
 		self.plotSetting = {0: ['darkorange', 'Biomass', self.exp_biom],
 							1: ['crimson', 'Glycerol', self.exp_glyc],
@@ -257,4 +256,5 @@ if __name__ == '__main__':
 	#zymoGrowth.simulate_and_plot(OUT_DIR)
 	zymoGrowth.simulate_and_plot_substrate_ratios(OUT_DIR, [0.5, 1, 2, 4])
 	zymoGrowth.simulate_and_plot_agitation_rates(OUT_DIR, [10, 40, 70, 100])
+
 
