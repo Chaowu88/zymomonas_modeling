@@ -15,6 +15,14 @@ python path\to\substrate_uptake_kinetics.py
 '''
 
 
+OUT_DIR = r'output\directory'
+DATA_File = r'path\to\data.xlsx'
+
+OD2BIOMASS = 0.33
+GLC_MW = 180.156	# g/mol
+XYL_MW = 150.13		# g/mol
+
+
 import numpy as np
 import pandas as pd
 from scipy.interpolate import interp1d
@@ -22,14 +30,6 @@ from scipy.integrate import solve_ivp, odeint
 from scipy.optimize import least_squares
 from openopt import NLP
 import matplotlib.pyplot as plt
-
-
-OUT_DIR = r'output\directory'
-DATA_File = r'path\to\data.xlsx'
-
-OD2BIOMASS = 0.33
-GLC_MW = 180.156	# g/mol
-XYL_MW = 150.13		# g/mol
 
 
 class ParamsFitting:
