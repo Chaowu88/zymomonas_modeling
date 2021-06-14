@@ -71,11 +71,11 @@ class GrowSimulation:
 		self.exp_bdo = (self.data['BDO'] / BDO_MW * 1000).values		# mmol/L
 		
 		self.plotSetting = {0: ['darkorange', 'Biomass', self.exp_biom],
-							1: ['crimson', 'Glycerol', self.exp_glyc],
-							2: ['saddlebrown', 'Acetoin', self.exp_actn],
-							3: ['blueviolet', 'BDO', self.exp_bdo],
-							4: ['forestgreen', 'Glucose', self.exp_glu],
-							5: ['royalblue', 'Xylose', self.exp_xyl]}
+				    1: ['crimson', 'Glycerol', self.exp_glyc],
+				    2: ['saddlebrown', 'Acetoin', self.exp_actn],
+				    3: ['blueviolet', 'BDO', self.exp_bdo],
+				    4: ['forestgreen', 'Glucose', self.exp_glu],
+				    5: ['royalblue', 'Xylose', self.exp_xyl]}
 			   
 			   
 	@staticmethod
