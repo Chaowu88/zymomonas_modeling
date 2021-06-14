@@ -9,8 +9,8 @@ __version__ = '1.0'
 
 r'''
 This script performs thermodynamics analysis which maximize the minimal driving force and
-					 enzyme protein cost analysis which minimize the totol enzyme protein cost of a given pathway 
-					 with additional metabolite concentration constraints
+		     enzyme protein cost analysis which minimize the totol enzyme protein cost of a given pathway 
+		     with additional metabolite concentration constraints
 This is as upgraded version of the functions in PathPaser (https://github.com/Chaowu88/PathParser)
 
 Usage:
