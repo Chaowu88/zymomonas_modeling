@@ -36,7 +36,7 @@ class ParamsFitting:
 	
 	def __init__(self, data_file):
 	
-		self.data = pd.read_excel(DATA_File, index_col = 0, usecols = [0, 1, 2, 3], names = ['time', 'OD', 'glucose', 'xylose'])
+		self.data = pd.read_excel(data_file, index_col = 0, usecols = [0, 1, 2, 3], names = ['time', 'OD', 'glucose', 'xylose'])
 		
 		self.timepoints = self.data.index.values
 		self.exp_biom = (self.data['OD'] * OD2BIOMASS).values			# g/L
