@@ -1,0 +1,15 @@
+#Enzyme ID	Reversibility	ΔrG'm (kJ/mol)	Substrates	Products	Substrate Km (mM)	Product Km (mM)	kcat (1/s)	Enzyme MW (kDa)
+glf	0	0	Glcex	Glc	40.21			50.1
+glk	0	-12.3	Glc;ATP	G6P;ADP	0.2(0.095,0.5);0.63(0.4,0.8)	;		66
+g6pdh	1	4.4	G6P;NADP	Gl6P;NADPH	;	;		53.9
+pgl	1	-14.1	Gl6P	SPG				25.5
+edd	0	-43.1	SPG	DDPG	0.04			12.6
+eda	1	-1.4	DDPG	GAP;Pyr	0.12(0.053,0.25)	;		66.8
+gapdh	1	35.8	GAP;Pi;NAD	BGP;NADH	;;	;		156.8
+pgk	1	-17.3	BGP;ADP	G3P;ATP	;	1.5;1.1		44
+pgm	1	5.2	G3P	G2P	1.1			52
+eno	1	-4.1	G2P	PEP				45.7
+pyk	0	-33.3	PEP;ADP	Pyr;ATP	;0.165	;		110
+als	0	-39.5	2Pyr	AcLac;CO2	20	;		190
+aldc	0	-40.3	AcLac	Actin;CO2		;		29
+bdh	1	-23	Actin;NADH	BDO;NAD	;	;		100			
