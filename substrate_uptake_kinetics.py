@@ -11,7 +11,7 @@ r'''
 This script estimates the kinetic parameters of glucose facilitator protein (glf) which transports both glucose and xylose with  competitive inhibition of each other
 
 Example:
-python C:\Users\cwu\Desktop\Software\Papers\Zymomonas\github\substrate_uptake_kinetics.py
+python path\to\substrate_uptake_kinetics.py
 '''
 
 
@@ -24,8 +24,8 @@ from openopt import NLP
 import matplotlib.pyplot as plt
 
 
-OUT_DIR = r'C:\Users\cwu\Desktop\Software\Papers\Zymomonas\github'
-DATA_File = r'C:\Users\cwu\Desktop\Software\Papers\Zymomonas\github\data.xlsx'
+OUT_DIR = r'output\directory'
+DATA_File = r'path\to\data.xlsx'
 
 OD2BIOMASS = 0.33
 GLC_MW = 180.156	# g/mol
