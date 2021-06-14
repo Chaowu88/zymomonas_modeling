@@ -11,13 +11,13 @@ r'''
 This script simulates growth of Zymomonas mobilis using dynamic flux balance analysis, and compares performance under various substrate ratios and agitation rates
 
 Usage:
-python C:\Users\cwu\Desktop\Software\Papers\Zymomonas\github\dFBA\dfba.py
+python path\to\dfba.py
 '''
 
 
-OUT_DIR = r'C:\Users\cwu\Desktop\Software\Papers\Zymomonas\github\dFBA'
-MODEL_FILE = r'C:\Users\cwu\Desktop\Software\Papers\Zymomonas\github\dFBA\zymo_BDO_deltaPDC.json'
-DATA_File = r'C:\Users\cwu\Desktop\Software\Papers\Zymomonas\github\substrate_uptake_kinetics\measured_kinetics.xlsx'
+OUT_DIR = r'output\directory'
+MODEL_FILE = r'path\to\zymo_BDO_deltaPDC.json'
+DATA_File = r'path\to\measured_kinetics.xlsx'
 
 OD2BIOMASS = 0.33
 GLC_MW = 180.156	# g/mol
