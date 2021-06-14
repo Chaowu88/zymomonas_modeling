@@ -40,8 +40,8 @@ def plot_and_save_timecourse_MDFs_and_EPCs(out_dir, MDFs, EPCs):
 	nRows = int(nEnzymes/nCols) + 1
 
 	for specie, data, color, title in zip(['MDF', 'EPC'], [MDFs, EPCs], ['#E24A33', '#1f77b4'], 
-										  ["Optimized driving force $\Delta$G' (kJ mol$^{-1}$)", 
-										   'Enzyme protein cost (g/(mol s$^{-1}$))']):
+									    ["Optimized driving force $\Delta$G' (kJ mol$^{-1}$)", 
+									     'Enzyme protein cost (g/(mol s$^{-1}$))']):
 		
 		fig = plt.figure(figsize = (16, nRows*3))
 		
