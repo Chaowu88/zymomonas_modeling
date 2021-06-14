@@ -16,7 +16,7 @@ python path\to\substrate_uptake_kinetics.py
 
 
 OUT_DIR = r'output\directory'
-DATA_File = r'path\to\data.xlsx'
+DATA_File = r'path\to\measured_kinetics.xlsx'
 
 OD2BIOMASS = 0.33
 GLC_MW = 180.156	# g/mol
