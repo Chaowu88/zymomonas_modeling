@@ -185,24 +185,3 @@ if __name__ == '__main__':
 	glfFitting.plot_fitted_vs_measured_curve(OUT_DIR)
 	glfFitting.save_kinetics_data(OUT_DIR)
 		
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
