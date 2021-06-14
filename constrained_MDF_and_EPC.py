@@ -14,14 +14,14 @@ This script performs thermodynamics analysis which maximize the minimal driving 
 This is as upgraded version of the functions in PathPaser (https://github.com/Chaowu88/PathParser)
 
 Usage:
-python C:\Users\cwu\Desktop\Software\Papers\Zymomonas\github\constrained_MDF_and_EPC\constrained_MDF_and_EPC.py
+python path\to\constrained_MDF_and_EPC.py
 '''
 
 
-PATHPARSER_DIR = r'C:\Users\cwu\Desktop\Software\PathParser\Scripts'
-OUT_DIR = r'C:\Users\cwu\Desktop\Software\Papers\Zymomonas\github\constrained_MDF_and_EPC\xylose'
-RXN_FILE = r'C:\Users\cwu\Desktop\Software\Papers\Zymomonas\github\constrained_MDF_and_EPC\xylose_utilization_pathway.tsv'   # glucose_utilization_pathway.tsv or xylose_utilization_pathway.tsv
-SUBSTRATE = 'xylose'   # glucose or xylose
+PATHPARSER_DIR = r'path\to\PathParser\Scripts'
+OUT_DIR = r'output\directory'
+RXN_FILE = r'path\to\glucose_utilization_pathway.tsv'   # glucose_utilization_pathway.tsv or xylose_utilization_pathway.tsv
+SUBSTRATE = 'glucose'   # glucose or xylose
 
 
 import sys
