@@ -253,7 +253,7 @@ if __name__ == '__main__':
 	
 	zymoGrowth = GrowSimulation(MODEL_FILE)
 	zymoGrowth.read_experimental_data(DATA_File)
-	#zymoGrowth.simulate_and_plot(OUT_DIR)
+	zymoGrowth.simulate_and_plot(OUT_DIR)
 	zymoGrowth.simulate_and_plot_substrate_ratios(OUT_DIR, [0.5, 1, 2, 4])
 	zymoGrowth.simulate_and_plot_agitation_rates(OUT_DIR, [10, 40, 70, 100])
 
